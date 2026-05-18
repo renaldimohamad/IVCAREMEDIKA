@@ -18,6 +18,16 @@ export const metadata: Metadata = {
   title: "IVCareMedika | Premium Homecare & Vitamin Infusion",
   description: "Layanan homecare premium bertaraf internasional yang menghadirkan tenaga medis profesional langsung ke rumah Anda. Mengutamakan keamanan, kesterilan, dan kenyamanan pasien.",
   keywords: "homecare, vitamin infusion, infus vitamin, medical checkup, wellness, jakarta homecare, ivcare medika",
+  icons: {
+    icon: [
+      {
+        url: "/ivcare_logo.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/ivcare_logo.svg",
+    apple: "/ivcare_logo.svg",
+  },
 };
 
 export default function RootLayout({
