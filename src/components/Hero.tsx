@@ -62,8 +62,7 @@ export default function Hero() {
 
             {/* Headline (2 lines matching reference pixel-perfectly) */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-navy-700 leading-[1.2] mb-6 tracking-tight">
-              Perawatan Profesional,<br className="hidden lg:inline" />
-              Kenyamanan <span className="text-primary-500">di Rumah</span>
+              Perawatan Profesional, <br className="hidden lg:inline" /> Kenyamanan <span className="text-primary-500">di Rumah</span>
             </h1>
 
             {/* Subheadline description */}

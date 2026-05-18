@@ -19,20 +19,15 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
 
-
-        {/* <ServiceSection />
-
+        {/* <ServiceSection /> */}
 
         <WhyChooseUs />
 
+        {/* <BookingFlow /> */}
 
-        <BookingFlow />
+        {/* <FAQ /> */}
 
-
-        <FAQ />
-
-
-        <CTASection /> */}
+        {/* <CTASection /> */}
 
       </main>
 
