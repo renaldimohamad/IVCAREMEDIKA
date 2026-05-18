@@ -48,9 +48,9 @@ export default function Hero() {
       <div className="container-custom relative z-10 w-full flex-grow flex items-center">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
 
-          {/* Left Side Content Block (7 Cols for visual roominess and perfect two-line headline) */}
+          {/* Left Side Content Block (6 Cols for balanced visual roominess and perfect two-line headline) */}
           <motion.div
-            className="lg:col-span-7 flex flex-col items-start text-left"
+            className="lg:col-span-6 flex flex-col items-start text-left"
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -93,23 +93,28 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto btn-white rounded-full px-8 py-4 text-xs font-bold flex items-center justify-center gap-2 hover:scale-102 hover:bg-slate-50 transition-all duration-300 border border-primary-200/50"
               >
-                <Calendar size={16} className="text-primary-500" />
+                <svg className="w-4 h-4 text-primary-500 fill-none stroke-current" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
                 Konsultasi Sekarang
               </a>
             </div>
           </motion.div>
 
-          {/* Right Side Image Block (5 Cols to match the landscape aspect ratio correctly) */}
+          {/* Right Side Image Block (6 Cols for balanced visual roominess and perfect two-line headline) */}
           <motion.div
-            className="lg:col-span-5 relative flex items-center justify-center lg:justify-end"
+            className="lg:col-span-6 relative flex items-center justify-center lg:justify-end"
             initial={{ opacity: 0, scale: 0.96, y: 25 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.25 }}
           >
             {/* Modern rounded, borderless image container with precise aspect ratio */}
-            <div className="relative w-full max-w-[500px] aspect-[1.1] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-luxury bg-slate-50 group z-10 border border-primary-50/20">
+            <div className="relative w-full max-w-[600px] lg:max-w-none aspect-[1.2] sm:aspect-[1.25] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-luxury bg-slate-50 group z-10 border border-primary-50/20">
               <img
-                src="/hero-nurse.png"
+                src="/hero-nurse-rebuild.png"
                 alt="Assisting Nurse & Patient Infusion Homecare"
                 className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-700 ease-out"
               />
@@ -131,13 +136,13 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
       >
-        <div className="bg-white rounded-[2rem] shadow-luxury border border-primary-50/60 p-6 md:p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 divide-y lg:divide-y-0 lg:divide-x divide-primary-100/30">
+        <div className="bg-white rounded-[2rem] shadow-luxury border border-primary-50/60 p-6 md:p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 divide-y lg:divide-y-0 lg:divide-x divide-primary-100/60">
           {trustItems.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className={`flex flex-row items-center gap-4 flex-1 ${idx > 0 ? "lg:pl-6" : ""
+                className={`flex flex-row items-center gap-4 flex-1 ${idx > 0 ? "lg:pl-8" : ""
                   }`}
               >
                 {/* Icon circle container */}
