@@ -1,78 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Check,
-  MessageSquareShare,
-  CalendarClock,
-  ShieldCheck
-} from "lucide-react";
-
-const contactCards = [
-  {
-    icon: Phone,
-    title: "Nomor WhatsApp",
-    val: "+62 813-5487-2379",
-    href: "https://wa.me/6281354872379"
-  },
-  {
-    icon: Mail,
-    title: "Email Support",
-    val: "support@ivcaremedika.com",
-    href: "mailto:support@ivcaremedika.com"
-  },
-  {
-    icon: MapPin,
-    title: "Lokasi Pusat",
-    val: "Kebayoran Baru, Jakarta Selatan",
-    href: "https://maps.google.com"
-  }
-];
-
-const checklists = [
-  "Pre-tindakan asesmen medis klinis dari dokter mitra",
-  "Peralatan steril baru segel dibuka di depan pasien",
-  "Monitoring rekam medis digital secara berkelanjutan",
-  "Jaminan perawat berlisensi STR aktif nasional"
-];
+import { Phone, Mail, MapPin, Check, ShieldCheck, CalendarClock, MessageSquareShare } from "lucide-react";
+import { siteConfig } from "@/config/site";
+import Section from "@/components/ui/Section";
+import Container from "@/components/ui/Container";
+import Card from "@/components/ui/Card";
+import GradientBlur from "@/components/ui/GradientBlur";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 export default function CTASection() {
+  const { contactSection } = siteConfig;
+
+  // Map contact cards to Lucide icons
+  const contactIconsMap: Record<string, any> = {
+    whatsapp: Phone,
+    email: Mail,
+    map: MapPin,
+  };
+
   return (
-    <section id="contact" className="relative bg-white py-24 lg:py-36 overflow-hidden">
-
-      {/* Decorative top divider line */}
-      <div className="section-divider absolute top-0 left-0 right-0"></div>
-
-      <div className="container-custom relative z-10">
-
+    <Section id="contact" background="white" hasDivider={true}>
+      <Container>
+        
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
+          
           {/* Left Column: Direct Call Directories & Pre-booking lists */}
-          <motion.div
-            className="lg:col-span-7 flex flex-col items-start"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <FadeIn className="lg:col-span-7 flex flex-col items-start text-left" x={-30}>
             <span className="text-[11px] font-extrabold tracking-[0.2em] text-primary-500 uppercase bg-primary-50 px-4 py-2 rounded-full border border-primary-100/50 mb-6">
-              Hubungi Kami
+              {contactSection.badge}
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-navy-700 leading-tight mb-6 tracking-tight">
-              Reservasi Layanan Homecare <br />
-              Premium Anda Sekarang
+              {contactSection.title}
             </h2>
             <p className="text-sm md:text-base text-navy-600/70 leading-relaxed mb-10 font-bold">
-              Hubungi layanan admin medis kami yang siaga melayani kebutuhan konsultasi awal Anda secara gratis dan ramah. Kami siap mengirimkan perawat terbaik langsung ke rumah Anda.
+              {contactSection.subtitle}
             </p>
 
-            {/* Direct Call Directory (3 Columns) */}
+            {/* Direct Call Directory (3 Columns using our reusable Card) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-10">
-              {contactCards.map((card, idx) => {
-                const Icon = card.icon;
+              {contactSection.contactCards.map((card, idx) => {
+                const Icon = contactIconsMap[card.type] || Phone;
                 return (
                   <a
                     key={idx}
@@ -99,10 +66,10 @@ export default function CTASection() {
             <div className="bg-primary-50/50 border border-primary-100/35 rounded-3xl p-6 md:p-8 w-full">
               <h4 className="font-heading font-extrabold text-sm text-navy-700 mb-4 flex items-center gap-2">
                 <ShieldCheck size={18} className="text-primary-500" />
-                Standar Kenyamanan & Keamanan IVCare Medika:
+                {contactSection.standardsTitle}
               </h4>
               <div className="grid sm:grid-cols-2 gap-4">
-                {checklists.map((check, idx) => (
+                {contactSection.checklists.map((check, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-primary-500 text-white flex items-center justify-center flex-shrink-0 mt-0.5 shadow-soft">
                       <Check size={10} strokeWidth={3} />
@@ -115,21 +82,15 @@ export default function CTASection() {
               </div>
             </div>
 
-          </motion.div>
+          </FadeIn>
 
           {/* Right Column: Smartphone Simulator Mockup */}
-          <motion.div
-            className="lg:col-span-5 relative flex items-center justify-center"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-
+          <FadeIn className="lg:col-span-5 relative flex items-center justify-center" x={30}>
+            
             {/* The main large photo (Hand holding phone simulating chat) */}
             <div className="relative w-full max-w-[430px] aspect-[1.1] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-luxury border border-primary-100/10 z-10 bg-white">
               <img
-                src="/hand-holding-phone.png"
+                src={contactSection.phoneImage}
                 alt="Smartphone Booking Simulator IVCareMedika"
                 className="w-full h-full object-cover object-center"
               />
@@ -159,13 +120,13 @@ export default function CTASection() {
             </div>
 
             {/* Backing Ambient Blur */}
-            <div className="absolute inset-0 bg-primary-100/30 rounded-full blur-[80px] -z-10 animate-pulse-slow"></div>
+            <GradientBlur position="center" color="primary" size="md" className="scale-90 -z-10" />
 
-          </motion.div>
+          </FadeIn>
 
         </div>
 
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

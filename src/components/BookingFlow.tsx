@@ -33,12 +33,12 @@ const steps = [
 export default function BookingFlow() {
   return (
     <section id="education" className="relative bg-white py-24 lg:py-36 overflow-hidden">
-      
+
       {/* Top decorative line divider */}
       <div className="section-divider absolute top-0 left-0 right-0"></div>
 
       <div className="container-custom relative z-10">
-        
+
         {/* Section Title */}
         <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
           <span className="text-[11px] font-extrabold tracking-[0.2em] text-primary-500 uppercase bg-primary-50 px-4 py-2 rounded-full border border-primary-100/50">
@@ -55,7 +55,7 @@ export default function BookingFlow() {
 
         {/* 4-Step Cards Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-          
+
           {/* Connector Line on Desktop */}
           <div className="hidden lg:block absolute top-1/2 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary-100 via-primary-200 to-primary-100 -translate-y-12 -z-10"></div>
 
