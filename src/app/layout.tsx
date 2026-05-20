@@ -15,43 +15,58 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.ivcaremedika.com"),
+
   title: "IVCareMedika | Premium Homecare & Vitamin Infusion",
-  description: "Layanan homecare premium bertaraf internasional yang menghadirkan tenaga medis profesional langsung ke rumah Anda. Mengutamakan keamanan, kesterilan, dan kenyamanan pasien.",
-  keywords: "homecare, vitamin infusion, infus vitamin, medical checkup, wellness, jakarta homecare, ivcare medika",
-  // icons: {
-  //   icon: [
-  //     {
-  //       url: "/favicon-16x16.png",
-  //       sizes: "16x16",
-  //       type: "image/png",
-  //     },
-  //     {
-  //       url: "/favicon-32x32.png",
-  //       sizes: "32x32",
-  //       type: "image/png",
-  //     },
-  //     {
-  //       url: "/favicon-192x192.png",
-  //       sizes: "192x192",
-  //       type: "image/png",
-  //     },
-  //     {
-  //       url: "/favicon-512x512.png",
-  //       sizes: "512x512",
-  //       type: "image/png",
-  //     },
-  //   ],
 
-  //   shortcut: "/favicon.ico",
+  description:
+    "Layanan homecare premium bertaraf internasional yang menghadirkan tenaga medis profesional langsung ke rumah Anda. Mengutamakan keamanan, kesterilan, dan kenyamanan pasien.",
 
-  //   apple: [
-  //     {
-  //       url: "/apple-touch-icon.png",
-  //       sizes: "180x180",
-  //       type: "image/png",
-  //     },
-  //   ],
-  // },
+  keywords: [
+    "homecare indonesia",
+    "homecare jakarta",
+    "infus vitamin ke rumah",
+    "iv therapy jakarta",
+    "dokter ke rumah",
+    "perawat ke rumah",
+    "medical check up rumah",
+  ],
+
+  alternates: {
+    canonical: "https://www.ivcaremedika.com",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://www.ivcaremedika.com",
+    locale: "id_ID",
+    title: "IVCareMedika | Homecare & Infus Vitamin Profesional",
+    description:
+      "Layanan homecare premium dengan tenaga medis profesional langsung ke rumah Anda.",
+    siteName: "IVCareMedika",
+
+    images: [
+      {
+        url: "/nurse-elderly-patient.webp",
+        width: 1200,
+        height: 630,
+        alt: "Homecare nurse from IVCareMedika providing care to patient at home",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "IVCareMedika | Homecare & Infus Vitamin",
+    description:
+      "Layanan homecare profesional: infus vitamin, dokter ke rumah, perawat homecare.",
+    images: ["/nurse-elderly-patient.webp"],
+  },
 };
 
 export default function RootLayout({
@@ -62,8 +77,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth h-full">
       <body
-        className={`${inter.variable} ${plusJakartaSans.variable} font-sans min-h-full flex flex-col text-slate-600 bg-white selection:bg-sky-100 selection:text-sky-900 antialiased overflow-x-hidden`}
-      >
+        className={`${inter.variable} ${plusJakartaSans.variable} font-sans min-h-full flex flex-col text-slate-600 bg-white selection:bg-sky-100 selection:text-sky-900 antialiased overflow-x-hidden`}>
         {children}
       </body>
     </html>
