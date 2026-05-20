@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/nurse-elderly-patient.webp",
+        url: "/OG_Image.webp",
         width: 1200,
         height: 630,
         alt: "Homecare nurse from IVCareMedika providing care to patient at home",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: "IVCareMedika | Homecare & Infus Vitamin",
     description:
       "Layanan homecare profesional: infus vitamin, dokter ke rumah, perawat homecare.",
-    images: ["/nurse-elderly-patient.webp"],
+    images: ["/OG_Image.webp"],
   },
 };
 
