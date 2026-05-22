@@ -18,18 +18,16 @@ export default function ServiceSection() {
       id="services"
       background="medical-pattern"
       className="pt-28 sm:pt-36 lg:pt-48 pb-24"
-      hasDivider={true}
-    >
+      hasDivider={true}>
       <Container>
-        
         {/* Section Heading */}
         <FadeIn className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
           <span className="text-[11px] font-extrabold tracking-[0.2em] text-primary-500 uppercase bg-primary-50 px-4 py-2 rounded-full border border-primary-100/50">
             {servicesSection.badge}
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-700 mt-6 mb-4 tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-navy-700 mt-6 mb-4 tracking-tight">
             {servicesSection.title}
-          </h2>
+          </h1>
           <p className="text-sm md:text-base text-navy-600/60 leading-relaxed font-medium">
             {servicesSection.subtitle}
           </p>
@@ -42,18 +40,23 @@ export default function ServiceSection() {
               <Card
                 variant="airy"
                 hoverLift={true}
-                className="w-full flex flex-col justify-between"
-              >
+                className="w-full flex flex-col justify-between">
                 <div>
                   {/* Header */}
-                  <h3 className="text-xl font-extrabold text-navy-700 mb-2">{service.title}</h3>
-                  <p className="text-xs text-navy-600/60 font-medium mb-6">{service.subtitle}</p>
+                  <h1 className="text-md font-extrabold text-navy-700 mb-2">
+                    {service.title}
+                  </h1>
+                  <p className="text-xs text-navy-600/60 font-medium mb-6">
+                    {service.subtitle}
+                  </p>
                   <div className="h-[2px] bg-primary-100/30 w-16 mb-6"></div>
 
                   {/* Bullet Lists */}
                   <ul className="space-y-4 mb-8">
                     {service.list.map((item, listIdx) => (
-                      <li key={listIdx} className="flex items-start gap-3 text-left">
+                      <li
+                        key={listIdx}
+                        className="flex items-start gap-3 text-left">
                         <div className="w-5 h-5 rounded-full bg-primary-50 border border-primary-100/50 flex items-center justify-center text-primary-500 flex-shrink-0 mt-0.5 shadow-soft">
                           <Check size={12} strokeWidth={3} />
                         </div>
@@ -68,7 +71,8 @@ export default function ServiceSection() {
                 {/* Important Clinical Disclaimer box */}
                 <div className="p-4 rounded-2xl bg-primary-50/50 border border-primary-100/30 flex items-start gap-3 mt-4 text-left">
                   <span className="text-[11px] leading-relaxed text-primary-700 font-medium">
-                    <strong className="font-extrabold">PENTING:</strong> {service.note}
+                    <strong className="font-extrabold">PENTING:</strong>{" "}
+                    {service.note}
                   </span>
                 </div>
               </Card>
@@ -83,12 +87,11 @@ export default function ServiceSection() {
               {servicesSection.sopValues.map((value, idx) => {
                 const Icon = iconMap[idx] || Award;
                 return (
-                  <div 
-                    key={idx} 
+                  <div
+                    key={idx}
                     className={`flex items-center gap-4 ${
                       idx > 0 ? "lg:pl-6 pt-6 md:pt-0" : ""
-                    }`}
-                  >
+                    }`}>
                     <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center text-white flex-shrink-0 border border-white/20">
                       <Icon size={22} strokeWidth={2} />
                     </div>
@@ -106,7 +109,6 @@ export default function ServiceSection() {
             </div>
           </div>
         </FadeIn>
-
       </Container>
     </Section>
   );

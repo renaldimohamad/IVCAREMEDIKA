@@ -11,9 +11,53 @@ import { siteConfig } from "@/config/site";
 import Loading from "./loading";
 
 export const metadata: Metadata = {
-  title: "Layanan Homecare Jakarta & Infus Vitamin ke Rumah Premium",
+  metadataBase: new URL("https://www.ivcaremedika.com"),
+
+  title:
+    "Layanan Homecare Premium Jabodetabek & Gorontalo | Infus Vitamin ke Rumah",
+
   description:
-    "Layanan kesehatan homecare Jakarta terbaik dari IVCareMedika. Dokter & perawat lincah berlisensi STR datang langsung ke rumah. Tersedia infus vitamin C (IV Therapy) premium & medical check-up.",
+    "IVCare Medika menghadirkan layanan homecare premium dengan dokter & tenaga medis profesional langsung ke rumah di Jabodetabek dan Gorontalo.",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    title:
+      "Layanan Homecare Premium Jabodetabek & Gorontalo | Infus Vitamin ke Rumah",
+    description:
+      "Layanan homecare premium dengan dokter & tenaga medis profesional langsung ke rumah.",
+    url: "https://www.ivcaremedika.com",
+    siteName: "IVCare Medika",
+    images: [
+      {
+        url: "/OG_Image.webp",
+        width: 1200,
+        height: 630,
+        alt: "IVCare Medika Homecare Premium",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Layanan Homecare Premium Jabodetabek & Gorontalo | Infus Vitamin ke Rumah",
+    description:
+      "Layanan homecare premium dengan dokter & tenaga medis profesional langsung ke rumah.",
+    images: ["/OG_Image.webp"],
+  },
 };
 
 export default function Home() {
@@ -39,7 +83,7 @@ export default function Home() {
         "@type": "MedicalBusiness",
         "@id": "https://www.ivcaremedika.com/#medicalbusiness",
         name: "IVCare Medika",
-        image: "https://www.ivcaremedika.com/logo-ivcaremedika.png",
+        image: "https://www.ivcaremedika.com/OG_Image.webp",
         url: "https://www.ivcaremedika.com",
         telephone: "+6281354872379",
         priceRange: "$$",
