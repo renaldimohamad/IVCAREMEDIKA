@@ -17,7 +17,6 @@ export default function Section({
   spacing = "default",
   ...props
 }: SectionProps) {
-  
   // Background styles
   const bgClasses = {
     white: "bg-white",
@@ -30,16 +29,22 @@ export default function Section({
   const spacingClasses = {
     default: "py-24 lg:py-36",
     none: "",
-    hero: "relative pt-24 pb-28 lg:pt-0 lg:pb-0 lg:min-h-screen flex flex-col justify-center",
+    hero: "relative pt-10 lg:pt-24 pb-24 sm:pb-32 lg:pb-40 lg:min-h-screen flex flex-col justify-center",
     custom: "",
   };
 
   return (
     <section
       id={id}
-      className={`relative overflow-hidden ${bgClasses[background]} ${spacingClasses[spacing]} ${className}`}
-      {...props}
-    >
+      className={`
+    relative
+    overflow-x-clip
+    overflow-y-visible
+    ${bgClasses[background]}
+    ${spacingClasses[spacing]}
+    ${className}
+  `}
+      {...props}>
       {/* Dynamic top absolute thin porcelain divider line */}
       {hasDivider && background !== "navy-900" && (
         <div className="section-divider absolute top-0 left-0 right-0 z-10 pointer-events-none"></div>

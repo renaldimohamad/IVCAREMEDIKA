@@ -48,11 +48,7 @@ export function FadeIn({
 
   if (isInStagger) {
     return (
-      <motion.div
-        variants={variants}
-        className={className}
-        {...props}
-      >
+      <motion.div variants={variants} className={className} {...props}>
         {children}
       </motion.div>
     );
@@ -65,8 +61,7 @@ export function FadeIn({
       viewport={viewportSettings}
       variants={variants}
       className={className}
-      {...props}
-    >
+      {...props}>
       {children}
     </motion.div>
   );
@@ -94,8 +89,7 @@ export function FadeInStagger({
           },
         }}
         className={className}
-        {...props}
-      >
+        {...props}>
         {children}
       </motion.div>
     </FadeInStaggerContext.Provider>

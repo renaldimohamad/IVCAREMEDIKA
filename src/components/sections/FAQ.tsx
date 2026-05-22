@@ -65,7 +65,7 @@ export default function FAQ() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-navy-700 mt-6 mb-4 tracking-tight">
             {faqSection.title}
           </h2>
-          <p className="text-sm md:text-base text-navy-600/60 leading-relaxed font-bold">
+          <p className="text-sm md:text-base text-navy-600/60 leading-relaxed font-medium">
             {faqSection.subtitle}
           </p>
 
@@ -77,7 +77,7 @@ export default function FAQ() {
               placeholder={faqSection.searchPlaceholder}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border border-primary-100/50 rounded-full py-4 pl-12 pr-6 text-sm text-navy-700 font-bold focus:outline-none focus:ring-2 focus:ring-primary-500/20 shadow-soft transition-all"
+              className="w-full bg-white border border-primary-100/50 rounded-full py-4 pl-12 pr-6 text-sm text-navy-700 font-medium focus:border-primary-400 focus:outline-none focus:ring-4 focus:ring-primary-500/10 shadow-soft transition-all duration-300"
             />
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function FAQ() {
           
           {/* Left Side: Category Sidebar Filters */}
           <div className="lg:col-span-4 space-y-3 bg-white p-6 rounded-3xl border border-primary-50/50 shadow-soft text-left">
-            <span className="text-[10px] font-heading font-extrabold tracking-wider text-navy-700/40 uppercase pl-3 block mb-2">
+            <span className="text-[10px] font-heading font-bold tracking-wider text-navy-700/40 uppercase pl-3 block mb-2">
               Kategori Pertanyaan
             </span>
             {faqSection.categories.map((catName) => {
@@ -99,7 +99,7 @@ export default function FAQ() {
                     setActiveCategory(catName);
                     setOpenIndex(null);
                   }}
-                  className={`w-full flex items-center justify-between p-3.5 rounded-2xl text-left text-xs font-bold transition-all duration-300 ${
+                  className={`w-full flex items-center justify-between p-3.5 rounded-2xl text-left text-xs font-semibold transition-all duration-300 cursor-pointer ${
                     activeCategory === catName
                       ? "bg-primary-50 text-primary-600 border border-primary-100/30"
                       : "text-navy-600/65 hover:bg-slate-50 border border-transparent"
@@ -113,7 +113,7 @@ export default function FAQ() {
                     </div>
                     <span>{catName}</span>
                   </div>
-                  <span className={`text-[10px] font-heading font-extrabold px-2.5 py-0.5 rounded-full ${
+                  <span className={`text-[10px] font-heading font-semibold px-2.5 py-0.5 rounded-full ${
                     activeCategory === catName ? "bg-primary-500 text-white" : "bg-primary-50 text-primary-600"
                   }`}>
                     {getCategoryCount(catName)}
@@ -141,13 +141,13 @@ export default function FAQ() {
                     >
                       <button
                         onClick={() => setOpenIndex(isOpen ? null : idx)}
-                        className="w-full flex items-center justify-between p-6 text-left"
+                        className="w-full flex items-center justify-between p-6 text-left cursor-pointer"
                       >
                         <div className="flex items-center gap-4">
-                          <span className="w-7 h-7 rounded-full bg-primary-50 border border-primary-100/20 text-primary-600 font-heading font-black text-xs flex items-center justify-center flex-shrink-0">
+                          <span className="w-7 h-7 rounded-full bg-primary-50 border border-primary-100/20 text-primary-600 font-heading font-extrabold text-xs flex items-center justify-center flex-shrink-0">
                             {idx + 1}
                           </span>
-                          <span className="font-heading font-extrabold text-sm text-navy-700 tracking-tight leading-snug">
+                          <span className="font-heading font-bold text-sm sm:text-base text-navy-700 tracking-tight leading-snug">
                             {faq.q}
                           </span>
                         </div>
@@ -168,7 +168,7 @@ export default function FAQ() {
                           >
                             <div className="px-6 pb-6 pt-2 border-t border-slate-50 flex items-start gap-4">
                               <div className="w-7 h-7 flex-shrink-0"></div>
-                              <p className="text-[13px] font-bold text-navy-600/55 leading-relaxed">
+                              <p className="text-[13px] sm:text-[14px] font-medium text-navy-600/80 leading-relaxed">
                                 {faq.a}
                               </p>
                             </div>
@@ -183,7 +183,7 @@ export default function FAQ() {
                   layout
                   className="bg-white rounded-3xl p-10 border border-primary-50/50 text-center shadow-soft"
                 >
-                  <p className="text-sm font-bold text-navy-600/40">
+                  <p className="text-sm font-medium text-navy-600/50">
                     {faqSection.emptyMessage}
                   </p>
                 </motion.div>

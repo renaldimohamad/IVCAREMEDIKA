@@ -25,7 +25,7 @@ export default function BookingFlow() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-navy-700 mt-6 mb-4 tracking-tight">
             {bookingSection.title}
           </h2>
-          <p className="text-sm md:text-base text-navy-600/60 leading-relaxed font-bold">
+          <p className="text-sm md:text-base text-navy-600/60 leading-relaxed font-medium">
             {bookingSection.subtitle}
           </p>
         </FadeIn>
@@ -46,7 +46,7 @@ export default function BookingFlow() {
                     className="w-full p-6 flex flex-col items-center text-center group"
                   >
                     {/* Number badge */}
-                    <span className="text-[10px] font-heading font-black text-primary-400 bg-primary-50 border border-primary-100/20 px-3 py-1 rounded-full mb-6 group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300">
+                    <span className="text-[10px] font-heading font-bold text-primary-500 bg-primary-50/50 border border-primary-100/30 px-3 py-1 rounded-full mb-6 group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300">
                       STEP {step.num}
                     </span>
 
@@ -59,7 +59,7 @@ export default function BookingFlow() {
                     <h3 className="font-heading font-extrabold text-base text-navy-700 mb-3 tracking-tight">
                       {step.title}
                     </h3>
-                    <p className="text-[11px] font-bold text-navy-600/50 leading-relaxed">
+                    <p className="text-[11px] font-medium text-navy-600/50 leading-relaxed">
                       {step.desc}
                     </p>
                   </Card>

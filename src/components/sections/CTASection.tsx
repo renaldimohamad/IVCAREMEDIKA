@@ -32,7 +32,7 @@ export default function CTASection() {
             <h2 className="text-3xl md:text-4xl font-extrabold text-navy-700 leading-tight mb-6 tracking-tight">
               {contactSection.title}
             </h2>
-            <p className="text-sm md:text-base text-navy-600/70 leading-relaxed mb-10 font-bold">
+            <p className="text-sm md:text-base text-navy-600/70 leading-relaxed mb-10 font-medium">
               {contactSection.subtitle}
             </p>
 
@@ -51,10 +51,10 @@ export default function CTASection() {
                     <div className="w-9 h-9 rounded-xl bg-primary-50 border border-primary-100/30 flex items-center justify-center text-primary-500 mb-4 group-hover:scale-110 transition-transform">
                       <Icon size={16} strokeWidth={2.5} />
                     </div>
-                    <span className="text-[10px] font-heading font-black text-navy-700/40 uppercase tracking-wide mb-1">
+                    <span className="text-[10px] font-heading font-bold text-navy-700/40 uppercase tracking-wide mb-1">
                       {card.title}
                     </span>
-                    <span className="text-[11px] font-bold text-navy-700 leading-snug group-hover:text-primary-500 transition-colors">
+                    <span className="text-[11px] font-semibold text-navy-700 leading-snug group-hover:text-primary-500 transition-colors">
                       {card.val}
                     </span>
                   </a>
@@ -74,7 +74,7 @@ export default function CTASection() {
                     <div className="w-5 h-5 rounded-full bg-primary-500 text-white flex items-center justify-center flex-shrink-0 mt-0.5 shadow-soft">
                       <Check size={10} strokeWidth={3} />
                     </div>
-                    <span className="text-[11px] text-navy-600/80 leading-relaxed font-bold">
+                    <span className="text-[11px] text-navy-600/80 leading-relaxed font-medium">
                       {check}
                     </span>
                   </div>
@@ -103,7 +103,7 @@ export default function CTASection() {
                 </div>
                 <div className="flex flex-col leading-tight">
                   <span className="font-heading font-extrabold text-[10px] text-navy-700">Home Visit Schedule</span>
-                  <span className="text-[9px] text-primary-500 font-bold">Confirmed Today</span>
+                  <span className="text-[9px] text-primary-500 font-semibold">Confirmed Today</span>
                 </div>
               </div>
 
@@ -114,7 +114,7 @@ export default function CTASection() {
                 </div>
                 <div className="flex flex-col leading-tight">
                   <span className="font-heading font-extrabold text-[10px] text-navy-700">Dokter Mitra Asesmen</span>
-                  <span className="text-[9px] text-green-500 font-bold">STR Registered</span>
+                  <span className="text-[9px] text-green-500 font-semibold">STR Registered</span>
                 </div>
               </div>
             </div>

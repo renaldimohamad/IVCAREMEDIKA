@@ -17,7 +17,7 @@ export default function ServiceSection() {
     <Section
       id="services"
       background="medical-pattern"
-      className="pt-56 pb-28"
+      className="pt-28 sm:pt-36 lg:pt-48 pb-24"
       hasDivider={true}
     >
       <Container>
@@ -30,7 +30,7 @@ export default function ServiceSection() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-navy-700 mt-6 mb-4 tracking-tight">
             {servicesSection.title}
           </h2>
-          <p className="text-sm md:text-base text-navy-600/60 leading-relaxed font-bold">
+          <p className="text-sm md:text-base text-navy-600/60 leading-relaxed font-medium">
             {servicesSection.subtitle}
           </p>
         </FadeIn>
@@ -47,7 +47,7 @@ export default function ServiceSection() {
                 <div>
                   {/* Header */}
                   <h3 className="text-xl font-extrabold text-navy-700 mb-2">{service.title}</h3>
-                  <p className="text-xs text-navy-600/60 font-bold mb-6">{service.subtitle}</p>
+                  <p className="text-xs text-navy-600/60 font-medium mb-6">{service.subtitle}</p>
                   <div className="h-[2px] bg-primary-100/30 w-16 mb-6"></div>
 
                   {/* Bullet Lists */}
@@ -57,7 +57,7 @@ export default function ServiceSection() {
                         <div className="w-5 h-5 rounded-full bg-primary-50 border border-primary-100/50 flex items-center justify-center text-primary-500 flex-shrink-0 mt-0.5 shadow-soft">
                           <Check size={12} strokeWidth={3} />
                         </div>
-                        <span className="text-[13px] text-navy-600/80 leading-snug font-bold">
+                        <span className="text-[13px] text-navy-600/80 leading-snug font-medium">
                           {item}
                         </span>
                       </li>
@@ -67,8 +67,8 @@ export default function ServiceSection() {
 
                 {/* Important Clinical Disclaimer box */}
                 <div className="p-4 rounded-2xl bg-primary-50/50 border border-primary-100/30 flex items-start gap-3 mt-4 text-left">
-                  <span className="text-[11px] leading-relaxed text-primary-700 font-bold">
-                    <strong>PENTING:</strong> {service.note}
+                  <span className="text-[11px] leading-relaxed text-primary-700 font-medium">
+                    <strong className="font-extrabold">PENTING:</strong> {service.note}
                   </span>
                 </div>
               </Card>
@@ -96,7 +96,7 @@ export default function ServiceSection() {
                       <span className="font-heading font-extrabold text-sm tracking-tight mb-0.5">
                         {value.title}
                       </span>
-                      <span className="text-[11px] text-white/70 font-bold">
+                      <span className="text-[11px] text-white/80 font-medium">
                         {value.text}
                       </span>
                     </div>

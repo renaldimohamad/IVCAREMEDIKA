@@ -16,56 +16,64 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ivcaremedika.com"),
-
-  title: "IVCareMedika | Premium Homecare & Vitamin Infusion",
-
+  title: {
+    default: "IVCareMedika | Premium Homecare & Vitamin Infusion Jakarta",
+    template: "%s | IVCareMedika",
+  },
   description:
-    "Layanan homecare premium bertaraf internasional yang menghadirkan tenaga medis profesional langsung ke rumah Anda. Mengutamakan keamanan, kesterilan, dan kenyamanan pasien.",
-
+    "Layanan homecare medis premium bertaraf internasional. Menghadirkan dokter, perawat STR berlisensi, dan infus vitamin (IV Therapy) langsung ke rumah Anda dengan jaminan kesterilan mutlak 100%.",
   keywords: [
     "homecare indonesia",
     "homecare jakarta",
     "infus vitamin ke rumah",
     "iv therapy jakarta",
+    "vitamin drip",
     "dokter ke rumah",
     "perawat ke rumah",
     "medical check up rumah",
+    "layanan kesehatan homecare",
+    "wellness service indonesia",
+    "perawat stroke",
+    "perawat geriatri lansia",
+    "ivcare medika",
   ],
-
   alternates: {
     canonical: "https://www.ivcaremedika.com",
   },
-
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
-
   openGraph: {
     type: "website",
-    url: "https://www.ivcaremedika.com",
     locale: "id_ID",
-    title: "IVCareMedika | Homecare & Infus Vitamin Profesional",
-    description:
-      "Layanan homecare premium dengan tenaga medis profesional langsung ke rumah Anda.",
+    url: "https://www.ivcaremedika.com",
     siteName: "IVCareMedika",
-
+    title: "IVCareMedika | Premium Homecare & Vitamin Infusion Jakarta",
+    description:
+      "Layanan homecare medis premium bertaraf internasional. Menghadirkan dokter, perawat STR berlisensi, dan infus vitamin (IV Therapy) langsung ke rumah Anda.",
     images: [
       {
-        url: "/OG_Image.webp",
+        url: "/logo-ivcaremedika.png",
         width: 1200,
         height: 630,
-        alt: "Homecare nurse from IVCareMedika providing care to patient at home",
+        alt: "IVCareMedika Premium Homecare & Wellness",
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "IVCareMedika | Homecare & Infus Vitamin",
+    title: "IVCareMedika | Premium Homecare & Vitamin Infusion Jakarta",
     description:
-      "Layanan homecare profesional: infus vitamin, dokter ke rumah, perawat homecare.",
-    images: ["/OG_Image.webp"],
+      "Layanan homecare medis premium bertaraf internasional langsung di rumah Anda. Menghadirkan perawat & dokter profesional.",
+    images: ["/logo-ivcaremedika.png"],
   },
 };
 
