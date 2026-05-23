@@ -38,8 +38,8 @@ export default function Section({
       id={id}
       className={`
     relative
-    overflow-x-clip
     overflow-y-visible
+    overflow-x-clip
     ${bgClasses[background]}
     ${spacingClasses[spacing]}
     ${className}

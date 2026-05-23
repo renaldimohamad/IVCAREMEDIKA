@@ -20,38 +20,59 @@ export default function Hero() {
         className="
         inline-flex
         items-center
-        gap-2
-        sm:gap-2.5
+        justify-center
+        gap-1.5 sm:gap-2
 
-        px-3.5 sm:px-4.5 lg:px-5
+        px-3 sm:px-4 lg:px-5
         py-2 sm:py-2.5
 
-        rounded-full
+        max-w-full
+        w-fit
+
+        rounded-2xl sm:rounded-full
+
         bg-white/75
         backdrop-blur-md
         border border-primary-100/40
 
         text-primary-600
-        text-[10px] sm:text-xs lg:text-sm
+        text-[10px] xs:text-[11px] sm:text-xs lg:text-sm
         font-semibold lg:font-bold
-        tracking-[0.12em]
-        leading-none
 
-     w-auto
-max-w-[90vw] sm:max-w-full
+        tracking-[0.06em] sm:tracking-[0.08em] lg:tracking-[0.12em]
+        leading-tight
 
         shadow-soft
         animate-float
 
         mx-auto lg:mx-0
         mb-4 sm:mb-5
-      ">
+
+        text-center
+        whitespace-normal
+        break-words
+      "
+      >
         <Sparkles
           size={12}
-          className="shrink-0 text-primary-500 sm:w-[14px] sm:h-[14px]"
+          className="
+          shrink-0
+          text-primary-500
+          w-3 h-3
+          sm:w-[14px] sm:h-[14px]
+        "
         />
 
-        <span className="truncate">{text}</span>
+        <span
+          className="
+          max-w-[75vw]
+          sm:max-w-full
+          whitespace-normal
+          break-words
+        "
+        >
+          {text}
+        </span>
       </div>
     );
   };

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/sections/Navbar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -83,9 +84,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className="scroll-smooth h-full">
+    <html lang="id" className="scroll-smooth h-full w-full overflow-x-clip">
       <body
-        className={`${inter.variable} ${plusJakartaSans.variable} font-sans min-h-full flex flex-col text-slate-600 bg-white selection:bg-sky-100 selection:text-sky-900 antialiased overflow-x-hidden`}>
+        className={`${inter.variable} ${plusJakartaSans.variable} font-sans min-h-full w-full flex flex-col text-slate-600 bg-white selection:bg-sky-100 selection:text-sky-900 antialiased overflow-x-clip`}>
+        <Navbar />
         {children}
       </body>
     </html>

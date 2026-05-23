@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "@/components/sections/Navbar";
+
 import Footer from "@/components/sections/Footer";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
@@ -14,7 +14,7 @@ type Props = {
 // Next.js 16 Dynamic Metadata Generator
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  
+
   const title = slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  
+
   const title = slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -39,7 +39,6 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      <Navbar />
       <main className="flex-grow pt-32 pb-20">
         <Section id="blog-post" background="white">
           <Container className="max-w-3xl">
@@ -85,7 +84,7 @@ export default async function BlogPostPage({ params }: Props) {
               <p>
                 Untuk itu, layanan <Link href="/#services" className="text-primary-600 hover:underline">homecare medis</Link> dan <Link href="/#services" className="text-primary-600 hover:underline">infus vitamin ke rumah (IV Therapy / Vitamin Drip)</Link> menjadi alternatif premium yang semakin diminati. Tidak hanya praktis karena dilakukan langsung di kediaman Anda, layanan ini juga menawarkan tingkat kesterilan mutlak yang setara dengan standar rumah sakit internasional.
               </p>
-              
+
               <div className="bg-primary-50/50 border border-primary-100/35 rounded-3xl p-6 md:p-8 my-10">
                 <h3 className="text-navy-700 font-extrabold text-lg mb-3">Mengapa Memilih Layanan Homecare IVCareMedika?</h3>
                 <ul className="list-disc pl-5 space-y-2 text-navy-600/80">
@@ -128,7 +127,6 @@ export default async function BlogPostPage({ params }: Props) {
                 </Link>
               </div>
             </div>
-
           </Container>
         </Section>
       </main>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
@@ -11,6 +12,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#home");
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +40,7 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
       sections.forEach((section) => observer.unobserve(section));
     };
-  }, []);
+  }, [pathname]);
 
   const handleLinkClick = (href: string) => {
     setActiveLink(href);
@@ -47,11 +49,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-        isScrolled
-          ? "py-3.5 bg-white/85 backdrop-blur-md border-primary-100/30 shadow-soft"
-          : "py-5 bg-white/40 backdrop-blur-sm border-transparent"
-      }`}>
+      className={`fixed top-0 left-0 right-0 z-50 h-24 w-full max-w-[100vw] flex items-center transition-all duration-300 border-b ${isScrolled
+        ? "bg-white/90 backdrop-blur-md border-primary-100/30 shadow-soft"
+        : "bg-white/70 backdrop-blur-sm border-transparent"
+        }`}>
       <Container className="flex items-center justify-between">
         {/* Brand Logo */}
         <Link
@@ -65,10 +66,10 @@ export default function Navbar() {
               className="w-14 h-14 object-contain"
             />
             <div className="flex flex-col leading-none">
-              <span className="font-heading font-extrabold text-lg tracking-wider text-primary-600">
+              <span className="font-heading font-extrabold text-sm tracking-wider text-primary-600">
                 {siteConfig.name.split(" ")[0].toUpperCase()}
               </span>
-              <span className="font-heading font-bold text-[10px] tracking-[0.25em] text-primary-600 -mt-0.5">
+              <span className="font-heading font-bold text-[8px] tracking-[0.25em] text-primary-600 -mt-0.5">
                 {siteConfig.name.split(" ")[1].toUpperCase()}
               </span>
             </div>
@@ -82,19 +83,17 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className={`font-heading font-extrabold text-[13px] tracking-wide transition-all relative group py-2 ${
-                  activeLink === link.href
-                    ? "text-primary-600"
-                    : "text-navy-600/70 hover:text-primary-500"
-                }`}
+                className={`font-heading font-extrabold text-[13px] tracking-wide transition-all relative group py-2 ${activeLink === link.href
+                  ? "text-primary-600"
+                  : "text-navy-600/70 hover:text-primary-500"
+                  }`}
                 onClick={() => handleLinkClick(link.href)}>
                 {link.name}
                 <span
-                  className={`absolute bottom-0 left-0 right-0 h-[2.5px] rounded-full bg-primary-500 transition-all duration-300 ${
-                    activeLink === link.href
-                      ? "scale-x-100"
-                      : "scale-x-0 group-hover:scale-x-50"
-                  }`}></span>
+                  className={`absolute bottom-0 left-0 right-0 h-[2.5px] rounded-full bg-primary-500 transition-all duration-300 ${activeLink === link.href
+                    ? "scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-50"
+                    }`}></span>
               </a>
             ))}
           </div>
@@ -127,20 +126,18 @@ export default function Navbar() {
 
       {/* Mobile Glassmorphic Navigation Panel */}
       <div
-        className={`md:hidden absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-2xl rounded-3xl shadow-2xl p-5 flex flex-col gap-1 border border-primary-100/50 transition-all duration-300 origin-top ${
-          isMobileMenuOpen
-            ? "opacity-100 scale-100 translate-y-0"
-            : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-        }`}>
+        className={`md:hidden absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-2xl rounded-3xl shadow-2xl p-5 flex flex-col gap-1 border border-primary-100/50 transition-all duration-300 origin-top ${isMobileMenuOpen
+          ? "opacity-100 scale-100 translate-y-0"
+          : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+          }`}>
         {siteConfig.navLinks.map((link) => (
           <a
             key={link.name}
             href={link.href}
-            className={`px-4 py-3 font-bold text-sm text-navy-600 hover:bg-primary-50 rounded-2xl transition-all ${
-              activeLink === link.href
-                ? "text-primary-600 bg-primary-50/50"
-                : ""
-            }`}
+            className={`px-4 py-3 font-bold text-sm text-navy-600 hover:bg-primary-50 rounded-2xl transition-all ${activeLink === link.href
+              ? "text-primary-600 bg-primary-50/50"
+              : ""
+              }`}
             onClick={() => handleLinkClick(link.href)}>
             {link.name}
           </a>
