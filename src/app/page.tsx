@@ -177,7 +177,7 @@ export default function Home() {
         {/* <BookingFlow /> */}
 
         {/* Interactive Searchable FAQ Accordions */}
-        <FAQ />
+        {/* <FAQ /> */}
 
         {/* Call directories, checklists, & smartphone phone simulator mockups */}
         {/* <CTASection /> */}
