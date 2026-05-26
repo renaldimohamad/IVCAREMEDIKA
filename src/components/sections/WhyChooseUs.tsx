@@ -239,7 +239,7 @@ export default function WhyChooseUs() {
               hoverLift={false}
               className="p-8 lg:p-10 w-full flex flex-col justify-center bg-primary-50/15 border-primary-100/30 text-left">
               <div className="mb-10">
-                <h3 className="text-2xl font-bold text-navy-700 tracking-tight">
+                <h3 className="text-xl md:text-2xl lg:text-2xl text-navy-700 tracking-tight">
                   Nilai-Nilai Kami
                 </h3>
                 <div className="w-12 h-1 bg-primary-500 mt-3 rounded-full"></div>
@@ -314,9 +314,10 @@ export default function WhyChooseUs() {
 
         {/* ROW 4: Bottom Ribbon / Banner */}
         <FadeIn y={30}>
-          <div className="bg-primary-50/20 border border-primary-100/20 rounded-[2rem] p-6 lg:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 items-center divide-y lg:divide-y-0 lg:divide-x divide-primary-100/40 text-left">
+          <div className="bg-primary-50 border border-primary-100/20 rounded-[2rem] p-6 lg:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-0 items-stretch text-left">
+
             {/* Statement Column */}
-            <div className="lg:col-span-2 flex items-center gap-3">
+            <div className="lg:col-span-2 flex items-center gap-3 p-4 border-b sm:border-b sm:border-r lg:border-b-0 lg:border-r border-primary-100">
               <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 flex-shrink-0 shadow-soft">
                 <svg
                   className="w-6 h-6"
@@ -345,13 +346,23 @@ export default function WhyChooseUs() {
             {/* Icons columns */}
             {aboutSection.ribbon.items.map((item, idx) => {
               const Icon = ribbonIconsMap[idx] || UserCheck;
+
               return (
                 <div
                   key={idx}
-                  className="flex items-center gap-3.5 pt-4 lg:pt-0 lg:pl-6">
+                  className={`
+            flex items-center gap-3.5 p-4
+            border-b sm:border-b-0
+            sm:border-r
+            lg:border-r
+            last:border-r-0
+            border-primary-100
+          `}
+                >
                   <div className="w-10 h-10 rounded-full bg-primary-50 border border-primary-100/35 flex items-center justify-center text-primary-500 flex-shrink-0 shadow-soft">
                     <Icon size={18} strokeWidth={2.5} />
                   </div>
+
                   <div className="flex flex-col leading-none">
                     <span className="text-[10px] font-medium text-navy-600/50 mb-0.5 tracking-tight uppercase">
                       {item.title}
