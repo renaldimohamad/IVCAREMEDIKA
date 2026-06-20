@@ -213,7 +213,7 @@ export const siteConfig = {
       },
     ],
     ribbon: {
-      statementLine1: "Kesehatan terbaik tidak selalu harus di rumah sakit.",
+      statementLine1: "",
       statementLine2: "Kami hadir di rumah Anda, dengan layanan terbaik.",
       items: [
         { title: "Tenaga Kesehatan", subtitle: "Berpengalaman" },
@@ -374,7 +374,7 @@ export const siteConfig = {
   // Footer Constants
   footer: {
     description:
-      "IVCare Medika adalah penyedia layanan kesehatan homecare & wellness medis premium bertaraf internasional yang melayani dengan keahlian, kepedulian mendalam, serta kesterilan peralatan mutlak langsung di rumah Anda.",
+      "IVCare Medika adalah penyedia layanan kesehatan homecare yang melayani dengan keahlian, kepedulian mendalam, serta kesterilan peralatan mutlak langsung di rumah Anda.",
     copyrightPrefix: "©",
     copyrightSuffix: "IVCare Medika. Hak Cipta Dilindungi Undang-Undang.",
     legalLinks: [
