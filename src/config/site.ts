@@ -54,12 +54,12 @@ export const siteConfig = {
 
   // Navigation Links
   navLinks: [
-    { name: "Beranda", href: "#home" },
-    { name: "Layanan", href: "#services" },
-    { name: "Tentang Kami", href: "#why-us" },
-    { name: "Edukasi", href: "#education" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Kontak", href: "#contact" },
+    { name: "Beranda", href: "/#home" },
+    { name: "Layanan", href: "/#services" },
+    { name: "Tentang Kami", href: "/#why-us" },
+    { name: "Artikel", href: "/artikel" },
+    { name: "FAQ", href: "/#faq" },
+    { name: "Kontak", href: "/#contact" },
   ] as NavLink[],
 
   // Hero Section Constants

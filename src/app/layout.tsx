@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/sections/Navbar";
+import { inter, plusJakartaSans } from "@/lib/font";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ivcaremedika.com"),
@@ -86,7 +76,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth h-full w-full overflow-x-clip">
       <body
-        className={`${inter.variable} ${plusJakartaSans.variable} font-sans min-h-full w-full flex flex-col text-slate-600 bg-white selection:bg-sky-100 selection:text-sky-900 antialiased overflow-x-clip`}>
+        className={`${inter.variable} ${plusJakartaSans.variable} min-h-full w-full flex flex-col text-slate-600 bg-white selection:bg-sky-100 selection:text-sky-900 antialiased overflow-x-clip`}>
         <Navbar />
         {children}
       </body>

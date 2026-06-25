@@ -57,6 +57,9 @@ export const metadata: Metadata = {
       "Layanan homecare premium dengan dokter & tenaga medis profesional langsung ke rumah.",
     images: ["/OG_Image.webp"],
   },
+  alternates: {
+    canonical: "https://www.ivcaremedika.com",
+  },
 };
 
 export default function Home() {
@@ -153,10 +156,7 @@ export default function Home() {
           __html: JSON.stringify(medicalBusinessSchema),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      {/* FAQ Schema is omitted because <FAQ /> is currently commented out */}
 
       <main className="flex-grow">
         <Hero />
