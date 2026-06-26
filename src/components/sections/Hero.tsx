@@ -210,7 +210,7 @@ export default function Hero() {
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 w-full">
                   <Button
-                    href={whatsapp.url}
+                    href={whatsapp.consultationUrl}
                     variant="primary"
                     size="md"
                     icon={<CustomIconWhatsapp size={20} />}

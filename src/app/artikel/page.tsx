@@ -91,7 +91,7 @@ export default function ArtikelPage() {
 
             <div className="hidden md:block">
               <Button
-                href={siteConfig.whatsapp.url}
+                href={siteConfig.whatsapp.consultationUrl}
                 variant="primary"
                 size="lg"
                 icon={<CustomIconWhatsapp size={18} />}>
@@ -101,7 +101,7 @@ export default function ArtikelPage() {
 
             <div className="block md:hidden">
               <Button
-                href={siteConfig.whatsapp.url}
+                href={siteConfig.whatsapp.consultationUrl}
                 variant="primary"
                 size="sm"
                 icon={<CustomIconWhatsapp size={18} />}>

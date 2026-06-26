@@ -34,6 +34,12 @@ export interface ContactCard {
   type: "whatsapp" | "email" | "map";
 }
 
+const consultationMessage = encodeURIComponent(
+  `Halo IVCare Medika
+
+Saya ingin berkonsultasi mengenai layanan homecare.`
+);
+
 export const siteConfig = {
   name: "IVCare Medika",
   tagline: "Kesehatan dan Kenyamanan Anda, Prioritas Kami",
@@ -45,11 +51,10 @@ export const siteConfig = {
 
   // WhatsApp Configuration
   whatsapp: {
-    number: "6281354872379",
-    formattedNumber: "+62 813-5487-2379",
-    url: "https://wa.me/6281354872379",
-    consultationUrl:
-      "https://wa.me/6281354872379?text=Halo%20IVCareMedika,%20saya%20ingin%20berkonsultasi",
+    number: "6285121545255",
+    formattedNumber: "+62 851-2154-5255",
+    url: "https://wa.me/6285121545255",
+    consultationUrl: `https://wa.me/6285121545255?text=${consultationMessage}`,
   },
 
   // Navigation Links

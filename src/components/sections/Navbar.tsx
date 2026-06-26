@@ -101,7 +101,7 @@ export default function Navbar() {
 
           {/* Direct CTA Booking Button */}
           <Button
-            href={siteConfig.whatsapp.url}
+            href={siteConfig.whatsapp.consultationUrl}
             variant="primary"
             size="sm"
             icon={<CustomIconWhatsapp size={18} />}>
@@ -139,7 +139,7 @@ export default function Navbar() {
         <div className="h-px bg-primary-50/50 my-2"></div>
         {/* WhatsApp Mobile Button */}
         <Button
-          href={siteConfig.whatsapp.url}
+          href={siteConfig.whatsapp.consultationUrl}
           variant="primary"
           size="md"
           className="w-full gap-2"
